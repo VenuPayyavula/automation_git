@@ -1,21 +1,58 @@
 # 🎮 GitQuest — Your Interactive Git Learning Guide
 ## Player: Venu Payyavula | Project: Automation Classes
+## Status: GIT MASTER 👑
 
 ---
 
-# 🗺️ THE QUEST MAP
+# 🗺️ THE QUEST MAP — ALL LEVELS COMPLETE!
 
 ```
-🏠 START → ⚔️ L1: What is Git? → 🔧 L2: Setup → 📦 L3: Repository
-→ 💾 L4: Stage & Commit → 🌿 L5: Branching → ☁️ L6: Remote
-→ 🔍 L7: PR & Review → 🏆 L8: Real Workflow → 👑 GIT MASTER
+✅ L1: What is Git?  →  ✅ L2: Setup  →  ✅ L3: Repository
+✅ L4: Stage & Commit  →  ✅ L5: Branching  →  ✅ L6: Remote
+✅ L7: Pull Requests  →  ✅ L8: Real Workflow  →  👑 GIT MASTER
 ```
 
 ---
 
-# ✅ LEVEL 1 — What is Git? [COMPLETED 🏆]
+# ⚡ DAILY CHEAT SHEET (Use This Every Day!)
 
-Git is a **Version Control System (VCS)** — it tracks every change to your code like a time machine.
+## 🌅 Start of Day:
+```bash
+git checkout master          # Go to master branch
+git pull                     # Get latest from GitHub
+git checkout -b feature/task-name  # Create your branch
+```
+
+## 💻 During Work:
+```bash
+git status                   # What changed? (run this often!)
+git diff filename            # See exact line changes
+git add .                    # Stage all changes
+git add filename             # Stage one specific file
+git commit -m "feat: message" # Save with meaningful message
+```
+
+## ☁️ Pushing & PR:
+```bash
+git push -u origin feature/task-name  # First push of branch
+git push                     # Subsequent pushes (after -u is set)
+```
+Then go to GitHub → Create Pull Request → Get Review → Merge
+
+## 🧹 End of Task Cleanup:
+```bash
+git checkout master          # Switch back to master
+git pull                     # Sync merged changes
+git branch -d feature/task-name  # Delete merged branch
+```
+
+---
+
+# 📖 COMPLETE REFERENCE
+
+## ✅ LEVEL 1 — What is Git? [MASTERED 🏆]
+
+Git is a **Version Control System (VCS)** — tracks every change to your code like a time machine.
 
 ### The 4 Zones of Git:
 | Zone | What it is | Analogy |
@@ -27,163 +64,255 @@ Git is a **Version Control System (VCS)** — it tracks every change to your cod
 
 ---
 
-# ✅ LEVEL 2 — Setup & Configuration [COMPLETED 🏆]
+## ✅ LEVEL 2 — Setup & Configuration [MASTERED 🏆]
 
-### Your Identity is Set:
+### Your Identity:
 - **Name:** VenuPayyavula
 - **Email:** bunnyvenu7172@gmail.com
-- **Default Branch:** master
+- **Remote Repo:** https://github.com/VenuPayyavula/automation_git.git
 
-### Key Commands Learned:
+### Key Commands:
 | Command | What it does |
 |---------|-------------|
 | `git --version` | Check if Git is installed |
-| `git config --global user.name "Your Name"` | Set your name |
+| `git config --global user.name "Name"` | Set your name |
 | `git config --global user.email "email"` | Set your email |
 | `git config --list` | See all settings |
 
-### 💡 Pro Tip — Pager Exit:
-When Git shows `(END)` in terminal → Press **`q`** to quit!
-To avoid pager always, use flag: `--no-pager`
+### 💡 Pro Tips:
+- When Git shows `(END)` → Press **`q`** to quit
+- `2>&1` = redirect error output to terminal (you don't need to type this yourself)
+- `&&` = "AND THEN" — run next command only if previous succeeded
 
 ---
 
-# 🔄 LEVEL 3 — Your Repository [IN PROGRESS ⚔️]
+## ✅ LEVEL 3 — Your Repository [MASTERED 🏆]
 
-## What is a Repository?
+### Key Commands:
+| Command | 🎯 Purpose |
+|---------|-----------|
+| `git init` | Create new repo in current folder |
+| `git status` | See what's changed / untracked / staged |
+| `git log --oneline` | See compact commit history |
+| `git log --oneline --graph --all` | Visual branch tree |
+| `git remote -v` | See connected GitHub servers |
 
-A **Repository (Repo)** is Git's database for your project.
-Think of it as a **save-file folder** that tracks ALL history of your project.
-
+### 📁 Your Project Structure:
 ```
-📁 Automation classes/          ← Your project folder
-├── 📂 .git/                    ← 🔒 Git's secret database (DON'T TOUCH!)
-│   ├── config                  ← repo settings
-│   ├── HEAD                    ← which branch you're on
-│   └── objects/                ← all your saved snapshots
+📁 Automation classes/
+├── 📂 .git/            ← Git's secret database (DON'T TOUCH!)
 ├── 📂 tests/
 │   ├── AdminPage.spec.ts
 │   ├── PIM.spec.ts
 │   ├── Leave.spec.ts
+│   ├── DashboardPage.spec.ts
 │   └── example.spec.ts
-├── .gitignore                  ← files Git should ignore
+├── .gitignore
+├── GIT_LEARNING_GUIDE.md
 ├── package.json
 └── playwright.config.ts
 ```
 
-## Key Commands for Level 3:
-
-| Command | What it does | When to use |
-|---------|-------------|-------------|
-| `git init` | Create a new repo in current folder | Starting fresh |
-| `git status` | See what's changed / what's new | ALWAYS — before anything |
-| `git log --oneline` | See history of commits (save points) | To review past saves |
-| `git --no-pager log --oneline` | Same but no scroll view | Cleaner output |
-| `git remote -v` | See connected remote (GitHub) servers | Check cloud connections |
-
-## 🎯 Why `git --no-pager log --oneline`?
-
-Breaking it down:
-- `git` → the git program
-- `--no-pager` → don't open scroll viewer (no `(END)` prompt!)
-- `log` → show history of commits
-- `--oneline` → show each commit in ONE line (compact view)
-
-**Output looks like:**
-```
-a3f9c2b Add Leave page tests
-9d1e7f3 Add PIM module tests
-c48b2a1 Initial project setup
-```
-Each line = one save point (commit) with its ID and message.
-
 ---
 
-# 💾 LEVEL 4 — Staging & Committing [COMING SOON]
+## ✅ LEVEL 4 — Staging & Committing [MASTERED 🏆]
 
-## The 3-Step Save Process:
-```
-1. MODIFY files    →  git status     (see what changed)
-2. STAGE files     →  git add        (pick what to save)
-3. COMMIT          →  git commit -m  (actually save it)
-```
+### The 3 States of Every File:
+| State | Color in git status | How to move forward |
+|-------|---------------------|---------------------|
+| 🔴 Untracked | Red | `git add filename` |
+| 🟡 Modified | Red | `git add filename` |
+| 🟢 Staged | Green | `git commit -m "message"` |
+| ✅ Committed | Clean | `git push` |
 
 ### Key Commands:
-| Command | What it does |
-|---------|-------------|
-| `git status` | See all changed/new files |
-| `git add filename` | Stage ONE specific file |
+| Command | 🎯 Purpose |
+|---------|-----------|
+| `git status` | See all file states |
+| `git add filename` | Stage ONE file |
 | `git add .` | Stage ALL changed files |
-| `git commit -m "message"` | Save staged files with a message |
-| `git diff` | See exactly what lines changed |
+| `git diff filename` | See exact line changes |
+| `git commit -m "message"` | Save staged files |
+| `git restore filename` | Discard unstaged changes |
+| `git restore --staged filename` | Unstage a file |
+
+### ✅ Good Commit Messages:
+```
+feat: add AdminPage login test cases
+fix: PIM search returning wrong results  
+test: add Leave module edge case tests
+chore: update playwright config timeout
+docs: add test execution README
+refactor: extract reusable login helper
+```
+
+### ❌ Bad Commit Messages:
+```
+changes / stuff / fix / update / asdfgh
+```
 
 ---
 
-# 🌿 LEVEL 5 — Branching [COMING SOON]
+## ✅ LEVEL 5 — Branching [MASTERED 🏆]
 
-Branches = **Parallel universes** for your code.
-- `main/master` = The stable production universe
-- `feature/login-tests` = Your experimental universe
+### Branch Naming Conventions:
+| Pattern | Example |
+|---------|---------|
+| `feature/description` | `feature/admin-login-tests` |
+| `fix/description` | `fix/pim-null-error` |
+| `hotfix/description` | `hotfix/login-crash` |
+| `your-name/task` | `venu/dashboard-tests` |
 
 ### Key Commands:
-| Command | What it does |
-|---------|-------------|
-| `git branch` | List all branches |
-| `git branch feature-name` | Create new branch |
-| `git checkout branch-name` | Switch to branch |
-| `git checkout -b feature-name` | Create AND switch in one step |
-| `git merge branch-name` | Merge branch into current |
+| Command | 🎯 Purpose |
+|---------|-----------|
+| `git branch` | List all branches (* = current) |
+| `git checkout -b branch-name` | Create AND switch to new branch |
+| `git checkout branch-name` | Switch to existing branch |
+| `git merge branch-name` | Bring another branch into current |
+| `git branch -d branch-name` | Delete a merged branch |
+
+### 🏷️ Branch Golden Rules:
+- ✅ Always create branch FROM master
+- ✅ Work ONLY on your own branch
+- ✅ Push branch to GitHub before PR
+- ✅ Delete branch after merge
+- ❌ NEVER commit directly to master in a team
+
+### HEAD Explained:
+- `HEAD` = "You Are Here" marker in Git history
+- `HEAD -> master` = You're on master branch
+- `HEAD -> feature/x` = You're on feature/x branch
 
 ---
 
-# ☁️ LEVEL 6 — Remote Repository [COMING SOON]
+## ✅ LEVEL 6 — Remote Repositories [MASTERED 🏆]
 
 ### Key Commands:
-| Command | What it does |
-|---------|-------------|
-| `git remote add origin URL` | Connect to GitHub repo |
-| `git push origin main` | Upload local → GitHub |
-| `git pull origin main` | Download GitHub → local |
+| Command | 🎯 Purpose |
+|---------|-----------|
+| `git remote add origin URL` | Connect local repo to GitHub |
+| `git remote -v` | Verify remote connection |
+| `git push -u origin master` | Upload + set tracking (first time) |
+| `git push` | Upload (after -u is set) |
+| `git pull` | Download + merge from GitHub |
+| `git fetch` | Download but don't merge |
 | `git clone URL` | Download entire repo from GitHub |
-| `git fetch` | Check for remote changes (no merge) |
+
+### 💡 Key Concepts:
+- `origin` = nickname for your GitHub remote URL
+- `-u` flag = sets tracking so future `git push` needs no extra args
+- `git pull` = `git fetch` + `git merge` in one command
+- Windows Git Credential Manager handles authentication via browser
 
 ---
 
-# 🔍 LEVEL 7 — Pull Requests & Code Review [COMING SOON]
+## ✅ LEVEL 7 — Pull Requests & Code Review [MASTERED 🏆]
 
-### Your Two Roles:
-| Role | Account | Actions |
-|------|---------|---------|
-| 👷 Contributor | Primary account | Create branch → Push → Raise PR |
-| 🔍 Reviewer | Second account | Review PR → Approve → Merge |
+### What is a PR?
+A Pull Request = formal request to merge your branch into master AFTER review.
+
+### The PR Flow:
+```
+feature branch → push → GitHub PR → Review → Approve → Merge → master
+```
+
+### Reviewer Actions on GitHub:
+| Action | Meaning |
+|--------|---------|
+| **Comment** | General feedback, no approval |
+| **Approve** | Code is good, ready to merge |
+| **Request changes** | Fix these issues first |
+| **Merge** | Bring branch into master (repo owner) |
+
+### Files Changed Tab:
+- 🟩 Green lines with `+` = Lines ADDED
+- 🟥 Red lines with `-` = Lines REMOVED
+- `@@ -0,0 +1 @@` = Diff header (lines before → lines after)
+
+### GitHub Security Rule:
+- You CANNOT approve your OWN PR (requires second reviewer)
+- But repo OWNER can always merge directly
+
+### PR Best Practices:
+- One PR = One feature/fix (keep it small!)
+- Write a clear description of what changed and why
+- Respond to reviewer comments before merging
+- Delete branch after merge (GitHub prompts you!)
 
 ---
 
-# 🏆 LEVEL 8 — Real Automation Workflow [COMING SOON]
+## ✅ LEVEL 8 — Real Daily Workflow [MASTERED 🏆]
 
-Full real-world Git workflow applied to your Playwright test project!
+### Your Complete Daily Git Ritual:
 
----
-
-# 📖 QUICK REFERENCE CHEAT SHEET
-
-## Most Used Commands (Daily):
+#### 🌅 MORNING — Sync Up:
 ```bash
-git status                    # What's changed? (USE THIS ALWAYS FIRST)
-git add .                     # Stage all changes
-git commit -m "your message"  # Save with description
-git push origin branch-name   # Upload to GitHub
-git pull origin main          # Get latest from GitHub
-git branch                    # Which branch am I on?
-git log --oneline             # See commit history
+git checkout master
+git pull
 ```
 
-## The Golden Git Workflow:
+#### 🌿 START TASK — Create Branch:
+```bash
+git checkout -b feature/task-description
+git branch   # verify you're on new branch
+git status   # verify clean state
 ```
-Pull latest → Create branch → Make changes → 
-Stage → Commit → Push → Create PR → Review → Merge
+
+#### 💻 DURING WORK — Save Progress Often:
+```bash
+git status              # see what changed
+git diff tests/file.ts  # see exact changes
+git add .               # stage all
+git commit -m "feat: description of what you did"
+# Repeat: work → add → commit (multiple times per day!)
+```
+
+#### ☁️ READY FOR REVIEW — Push & PR:
+```bash
+git push -u origin feature/task-description
+# Go to GitHub → yellow banner → Create pull request
+# Fill title + description → Create pull request
+# Request review from teammate
+```
+
+#### ✅ AFTER MERGE — Clean Up:
+```bash
+git checkout master
+git pull                              # get the merged changes
+git branch -d feature/task-description  # delete local branch
+git log --oneline                    # verify history
 ```
 
 ---
 
-*Last Updated: Level 3 in progress*
+## 🚀 ADVANCED COMMANDS (Coming Soon!)
+
+| Command | Purpose |
+|---------|---------|
+| `git stash` | Temporarily hide uncommitted changes |
+| `git stash pop` | Bring back stashed changes |
+| `git revert COMMIT_ID` | Undo a commit safely |
+| `git reset --soft HEAD~1` | Undo last commit (keep changes staged) |
+| `git cherry-pick COMMIT_ID` | Apply one specific commit to current branch |
+| `git rebase master` | Update branch with latest master changes |
+
+---
+
+## 🏆 ACHIEVEMENTS UNLOCKED
+
+| Badge | Level | Achievement |
+|-------|-------|-------------|
+| 🌱 "The Awakening" | L1 | Understood why Git exists |
+| ⚙️ "Configured" | L2 | Set up Git identity |
+| 📦 "Repository Born" | L3 | First repo initialized |
+| 💾 "First Blood" | L4 | First commit ever! |
+| 🌿 "Multiverse Explorer" | L5 | Proved branch isolation |
+| 🌿 "Branch Master" | L5 | Full branch lifecycle complete |
+| ☁️ "Cloud Warrior" | L6 | Code pushed to GitHub |
+| 🔍 "The Gatekeeper" | L7 | Full PR cycle completed |
+| 👑 "Git Master" | L8 | Real workflow mastered! |
+
+---
+
+*Completed: All 8 Levels | Repository: https://github.com/VenuPayyavula/automation_git*
