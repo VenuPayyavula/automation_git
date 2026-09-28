@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "playwright": "^1.61.1"
+  },
+  "name": "automation-classes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1"
+  }
+}
